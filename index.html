@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personal Service Robots via RaaS | Patents for Sale</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Noto+Sans+JP:wght@300;400;500;600;700;800&amp;family=Noto+Sans+SC:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { width: 100%; overflow-x: hidden; }
+        body { font-family: 'Manrope', 'Noto Sans JP', 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-feature-settings: 'kern' 1, 'liga' 1; text-rendering: geometricPrecision; }
+        .font-mono { font-family: 'Manrope', 'Noto Sans JP', 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-variant-numeric: tabular-nums; }
+        img, svg { max-width: 100%; height: auto; }
+        
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .text-gradient {
+            display: inline-block;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .hero-shell {
+            width: min(calc(100% - clamp(2rem, 6vw, 6rem)), 88rem);
+            margin-inline: auto;
+            padding-block: clamp(5.5rem, 10vw, 8rem);
+            overflow: visible;
+        }
+
+        .hero-title {
+            max-width: 100%;
+            font-size: clamp(2.15rem, 7.4vw, 4.9rem);
+            line-height: 1.03;
+            letter-spacing: -0.048em;
+            text-wrap: balance;
+            overflow: visible;
+        }
+
+        .hero-title-line {
+            display: block;
+            max-width: 100%;
+            padding-inline: 0.07em;
+            padding-bottom: 0.04em;
+            margin-inline: -0.07em;
+            white-space: normal;
+            overflow: visible;
+        }
+
+        .hero-subcopy {
+            max-width: min(100%, 76rem);
+            margin-inline: auto;
+            font-size: clamp(1rem, 1.75vw, 1.45rem);
+            line-height: 1.55;
+            text-wrap: balance;
+        }
+
+        .responsive-container {
+            width: min(calc(100% - clamp(2rem, 6vw, 6rem)), 88rem);
+            max-width: 88rem;
+            margin-inline: auto;
+        }
+
+        .section-lead-wide {
+            max-width: min(100%, 88rem);
+            margin-inline: auto;
+            line-height: 1.7;
+            text-wrap: balance;
+        }
+
+        @media (min-width: 1320px) {
+            .section-lead-wide { white-space: nowrap; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-shell,
+            .responsive-container {
+                width: calc(100% - 2rem);
+            }
+            .hero-title {
+                font-size: clamp(2rem, 12vw, 3rem);
+                letter-spacing: -0.04em;
+            }
+            .hero-subcopy {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        
+        /* ハイライト用のなめらかなトランジション */
+        .highlight-text {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0.25rem;
+        }
+    
+
+        .language-switcher {
+            position: absolute;
+            top: clamp(1rem, 3vw, 2rem);
+            right: clamp(1rem, 4vw, 3rem);
+            z-index: 20;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.38);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.24);
+        }
+
+        .language-option {
+            border: 0;
+            border-radius: 9999px;
+            padding: 0.45rem 0.72rem;
+            color: rgba(219, 234, 254, 0.78);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            cursor: pointer;
+            background: transparent;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .language-option:hover {
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .language-option.is-active {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        html[lang="ja"] .hero-title,
+        html[lang="zh-CN"] .hero-title {
+            letter-spacing: -0.035em;
+        }
+
+        html[lang="ja"] .section-lead-wide,
+        html[lang="zh-CN"] .section-lead-wide {
+            white-space: normal;
+        }
+
+        @media (max-width: 640px) {
+            .language-switcher {
+                top: 0.85rem;
+                right: 0.85rem;
+            }
+            .language-option {
+                padding: 0.4rem 0.58rem;
+                font-size: 0.72rem;
+            }
+        }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed">
+<header class="hero-gradient text-white relative">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div aria-label="Language selector" class="language-switcher">
+<button class="language-option" data-lang="en" type="button">EN</button>
+<button class="language-option" data-lang="ja" type="button">日本語</button>
+<button class="language-option" data-lang="zh" type="button">中文</button>
+</div>
+
+<div class="hero-shell relative z-10 text-center flex flex-col items-center">
+<span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-blue-200 text-sm font-bold tracking-widest uppercase mb-6 fade-up" data-i18n="heroBadge">
+                Patents for Sale
+            </span>
+<h1 class="hero-title font-extrabold mb-8 fade-up delay-100 w-full">
+<span class="hero-title-line" data-i18n="heroTitle1">Patents for turning</span>
+<span class="hero-title-line text-gradient" data-i18n="heroTitle2">companion robots</span>
+<span class="hero-title-line" data-i18n="heroTitle3">into physical service agents</span>
+</h1>
+<p class="hero-subcopy mb-10 font-light fade-up delay-200 text-blue-100 tracking-wide" data-i18n="heroSubcopy">
+                This portfolio focuses on user-facing companion robots that translate third-party service requests and robot-side sensing into physical actions around an individual user.
+            </p>
+<div class="mt-8 text-sm text-blue-200/60 font-medium tracking-wide fade-up delay-200 flex flex-col items-center gap-2">
+<div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+<span class="flex items-center gap-1.5" data-i18n-html="grantedUS">Granted in US <img alt="US" class="w-5 h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w40/us.png"/></span>
+<span class="flex items-center gap-1.5" data-i18n-html="grantedChina">China <img alt="CN" class="w-5 h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w40/cn.png"/></span>
+<span class="flex items-center gap-1.5" data-i18n-html="grantedJapan">and Japan <img alt="JP" class="w-5 h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w40/jp.png"/></span>
+</div>
+<span class="mt-1" data-i18n="secured2041">Secured through 2041</span>
+</div>
+</div>
+</header>
+<section class="container mx-auto px-6 py-24 max-w-7xl">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-extrabold text-slate-900" data-i18n="strategicTitle">Strategic Value by Industry</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-6 rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="group relative bg-white rounded-3xl p-10 text-center transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-3 border border-slate-100 overflow-hidden flex flex-col items-center">
+<div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-50 rounded-full blur-3xl group-hover:bg-blue-100 transition-colors duration-500"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 rounded-2xl bg-blue-600 flex items-center justify-center mb-8 shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform duration-500 mx-auto">
+<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-slate-900 group-hover:text-blue-600 transition-colors" data-i18n="card1Title">Robot Developers &amp; Manufacturers</h3>
+<p class="text-slate-600 leading-relaxed" data-i18n="card1Body">Turn deployed companion robots into monetizable service endpoints. Use patented RaaS control flows to connect robots with health, safety, insurance, and care-service partners — expanding revenue beyond hardware sales or pre-installed robot skills.</p>
+</div>
+</div>
+<div class="group relative bg-white rounded-3xl p-10 text-center transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-3 border border-slate-100 overflow-hidden flex flex-col items-center">
+<div class="absolute -top-20 -left-20 w-40 h-40 bg-emerald-50 rounded-full blur-3xl group-hover:bg-emerald-100 transition-colors duration-500"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 rounded-2xl bg-emerald-600 flex items-center justify-center mb-8 shadow-lg shadow-emerald-200 group-hover:scale-110 transition-transform duration-500 mx-auto">
+<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-slate-900 group-hover:text-emerald-600 transition-colors" data-i18n="card2Title">Health, Insurance &amp; Safety Providers</h3>
+<p class="text-slate-600 leading-relaxed" data-i18n="card2Body">Extend digital services into the user's physical world. Add premium service tiers where companion robots can prompt exercise, accompany users outdoors, guide safer movement, and provide safety-related physical support around the individual user.</p>
+</div>
+</div>
+<div class="group relative bg-white rounded-3xl p-10 text-center transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-3 border border-slate-100 overflow-hidden flex flex-col items-center">
+<div class="absolute -top-20 -left-20 w-40 h-40 bg-purple-50 rounded-full blur-3xl group-hover:bg-purple-100 transition-colors duration-500"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 rounded-2xl bg-purple-600 flex items-center justify-center mb-8 shadow-lg shadow-purple-200 group-hover:scale-110 transition-transform duration-500 mx-auto">
+<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-slate-900 group-hover:text-purple-600 transition-colors" data-i18n="card3Title">Cloud &amp; Robot API Platforms</h3>
+<p class="text-slate-600 leading-relaxed" data-i18n="card3Body">Build a strategic intermediation layer between service providers and physical robots. Covers key RaaS transactions that translate service requests into autonomous physical robot actions — enabling platform operators to orchestrate multiple services on top of companion robots.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white border-y border-slate-200 py-24 relative">
+<div class="responsive-container relative z-10">
+<div class="text-center mb-20">
+<h2 class="text-3xl md:text-4xl font-extrabold text-slate-900" data-i18n="experienceTitle">The Protected Companion-Robot RaaS Experience</h2>
+<p class="section-lead-wide text-lg text-slate-500 mt-4" data-i18n="experienceLead">Five scenes covering service-triggered exercise support, user-state-aware timing, outdoor mode switching, and robot-side guidance, shielding, and illumination behaviors.</p>
+</div>
+<div class="space-y-24">
+<div class="flex flex-col lg:flex-row items-center gap-12 group">
+<div class="lg:w-1/2 text-left">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 font-bold text-sm tracking-wide mb-4 border border-blue-100" data-i18n-html="scene1Badge">
+<span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span>SCENE 1
+                        </div>
+<h3 class="text-3xl font-extrabold text-slate-900 mb-6 group-hover:text-blue-600 transition-colors" data-i18n="scene1Title">Context-Aware Trigger &amp; Timing</h3>
+<div class="mb-6 space-y-6">
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="uxValue">UX Value</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-blue-200 pl-4" data-i18n-html="scene1Ux">
+                                Avoids intrusive digital notifications. The robot "reads the room," holding back exercise requests when the user is busy, and <span class="hl-scene1 highlight-text">initiates engagement only when it detects the user is in an appropriate, relaxed state to be receptive</span>.
+                            </p>
+</div>
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="grantedClaimBasis">Granted Claim Basis</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-blue-200 pl-4" data-i18n-html="scene1Claim">
+                                A dual-server architecture. The Service Provider's server evaluates biometric data to issue an exercise request. The Robotics Operator's server temporarily holds this request, acquiring dynamic state data from the robot's sensors, and <span class="hl-scene1 highlight-text">only transmits the execution instruction to the robot after determining the user's state is suitable</span>.
+                            </p>
+</div>
+</div>
+<div class="bg-blue-100 p-4 rounded-xl border border-blue-200">
+<p class="text-xs font-bold text-blue-500 tracking-widest uppercase mb-2" data-i18n="grantedPatents">Granted Patents</p>
+<div class="text-sm text-blue-900 font-mono flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center whitespace-nowrap"><img alt="CN" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/cn.png"/> 115427126</span>
+<span class="text-blue-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="JP" class="w-4 h-3 rounded-sm shadow-sm mr-1.5 border border-blue-200/50" src="https://flagcdn.com/w40/jp.png"/> 7113270</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene1', 'bg-blue-200', 'text-blue-900')" onmouseleave="removeHighlight('hl-scene1', 'bg-blue-200', 'text-blue-900')">
+<img alt="Scene 1" class="w-full h-auto rounded-xl" src="scene1.png"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row-reverse items-center gap-12 group">
+<div class="lg:w-1/2 text-left">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 font-bold text-sm tracking-wide mb-4 border border-indigo-100" data-i18n-html="scene2Badge">
+<span class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></span>SCENE 2
+                        </div>
+<h3 class="text-3xl font-extrabold text-slate-900 mb-6 group-hover:text-indigo-600 transition-colors" data-i18n="scene2Title">Physical Engagement</h3>
+<div class="mb-6 space-y-6">
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="uxValue">UX Value</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-indigo-200 pl-4" data-i18n-html="scene2Ux">
+                                Transforms easily ignored digital nudges into compelling physical interactions. A robot <span class="hl-scene2 highlight-text">approaching and personally inviting the user to exercise creates a more salient physical prompt than a digital message alone</span>.
+                            </p>
+</div>
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="grantedClaimBasis">Granted Claim Basis</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-indigo-200 pl-4" data-i18n-html="scene2Claim">
+                                Triggered automatically when a prior digital message fails to achieve the target exercise amount. The robot utilizes optical sensors to detect the user's 3D position, navigates to them, <span class="hl-scene2 highlight-text">executes physical gestures via actuators, and monitors user behavior</span> via audio/visual sensors to accompany the workout.
+                            </p>
+</div>
+</div>
+<div class="bg-indigo-100 p-4 rounded-xl border border-indigo-200">
+<p class="text-xs font-bold text-indigo-500 tracking-widest uppercase mb-2" data-i18n="grantedPatents">Granted Patents</p>
+<div class="text-sm text-indigo-900 font-mono flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center whitespace-nowrap"><img alt="US" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/us.png"/> 11942216, 12119111</span>
+<span class="text-indigo-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="CN" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/cn.png"/> 116234664</span>
+<span class="text-indigo-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="JP" class="w-4 h-3 rounded-sm shadow-sm mr-1.5 border border-indigo-200/50" src="https://flagcdn.com/w40/jp.png"/> 7178579, 7357260, 7499479</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene2', 'bg-indigo-200', 'text-indigo-900')" onmouseleave="removeHighlight('hl-scene2', 'bg-indigo-200', 'text-indigo-900')">
+<img alt="Scene 2" class="w-full h-auto rounded-xl" src="scene2.png"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row items-center gap-12 group">
+<div class="lg:w-1/2 text-left">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 font-bold text-sm tracking-wide mb-4 border border-emerald-100" data-i18n-html="scene3Badge">
+<span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>SCENE 3
+                        </div>
+<h3 class="text-3xl font-extrabold text-slate-900 mb-6 group-hover:text-emerald-600 transition-colors" data-i18n="scene3Title">Automatic outdoor-mode transition when configured conditions are met</h3>
+<div class="mb-6 space-y-6">
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="uxValue">UX Value</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-emerald-200 pl-4" data-i18n-html="scene3Ux">
+                                As the user walks out the door, the robot <span class="hl-scene3 highlight-text">instantly adapts to the outdoors</span>—increasing speed and altering its behavior without requiring any manual mode switching by the user.
+                            </p>
+</div>
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="grantedClaimBasis">Granted Claim Basis</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-emerald-200 pl-4" data-i18n-html="scene3Claim">
+                                Protected via a comprehensive dual-architecture. The environment transition can be triggered via server commands, or autonomously by the robot itself. Upon crossing the threshold, the robot <span class="hl-scene3 highlight-text">independently shifts from an indoor to an outdoor specification</span>, e.g., dynamically increasing permitted mobility speeds.
+                            </p>
+</div>
+</div>
+<div class="bg-emerald-100 p-4 rounded-xl border border-emerald-200">
+<p class="text-xs font-bold text-emerald-500 tracking-widest uppercase mb-2" data-i18n="grantedPatents">Granted Patents</p>
+<div class="text-sm text-emerald-900 font-mono flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center whitespace-nowrap"><img alt="US" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/us.png"/> 12169408</span>
+<span class="text-emerald-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="CN" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/cn.png"/> 115428470</span>
+<span class="text-emerald-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="JP" class="w-4 h-3 rounded-sm shadow-sm mr-1.5 border border-emerald-200/50" src="https://flagcdn.com/w40/jp.png"/> 7153891</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene3', 'bg-emerald-200', 'text-emerald-900')" onmouseleave="removeHighlight('hl-scene3', 'bg-emerald-200', 'text-emerald-900')">
+<img alt="Scene 3" class="w-full h-auto rounded-xl" src="scene3.png"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row-reverse items-center gap-12 group">
+<div class="lg:w-1/2 text-left">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-rose-50 text-rose-600 font-bold text-sm tracking-wide mb-4 border border-rose-100" data-i18n-html="scene4Badge">
+<span class="w-2 h-2 rounded-full bg-rose-500 mr-2"></span>SCENE 4
+                        </div>
+<h3 class="text-3xl font-extrabold text-slate-900 mb-6 group-hover:text-rose-600 transition-colors" data-i18n="scene4Title">Proactive Guiding &amp; Shielding</h3>
+<div class="mb-6 space-y-6 flex flex-col gap-4 text-balance">
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="uxValue">UX Value</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-rose-200 pl-4" data-i18n-html="scene4Ux">
+                                Acting like a physical bodyguard or guide dog, 
+                                <span class="hl-scene4a highlight-text">the robot proactively steps in front to guide the user away from unseen hazards</span>, or 
+                                <span class="hl-scene4b highlight-text">physically interposes itself as a shield against moving threats</span>.
+                            </p>
+</div>
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="grantedClaimBasis">Granted Claim Basis</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-rose-200 pl-4" data-i18n-html="scene4Claim">
+                                Continuously monitors from a default standard relative position. Upon detecting a dangerous object in the movement direction or a moving body entering an alert area, it executes dynamic path recalculation. 
+                                <span class="hl-scene4a highlight-text">It then autonomously drives to a calculated "lead position" to guide routing</span>, or 
+                                <span class="hl-scene4b highlight-text">a "guard position" directly between the user and the moving hazard</span>.
+                            </p>
+</div>
+</div>
+<div class="bg-rose-100 p-4 rounded-xl border border-rose-200">
+<p class="text-xs font-bold text-rose-500 tracking-widest uppercase mb-2" data-i18n="grantedPatents">Granted Patents</p>
+<div class="text-sm text-rose-900 font-mono flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center whitespace-nowrap"><img alt="US" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/us.png"/> 11960285, 12253863</span>
+<span class="text-rose-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="CN" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/cn.png"/> 116249604</span>
+<span class="text-rose-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="JP" class="w-4 h-3 rounded-sm shadow-sm mr-1.5 border border-rose-200/50" src="https://flagcdn.com/w40/jp.png"/> 7249565, 7281654</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full flex flex-col gap-6">
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene4a', 'bg-rose-200', 'text-rose-900')" onmouseleave="removeHighlight('hl-scene4a', 'bg-rose-200', 'text-rose-900')">
+<img alt="Scene 4 Guiding" class="w-full h-auto rounded-xl" src="scene4a.png"/>
+</div>
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene4b', 'bg-rose-200', 'text-rose-900')" onmouseleave="removeHighlight('hl-scene4b', 'bg-rose-200', 'text-rose-900')">
+<img alt="Scene 4 Shielding" class="w-full h-auto rounded-xl" src="scene4b.png"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row items-center gap-12 group">
+<div class="lg:w-1/2 text-left">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-amber-50 text-amber-600 font-bold text-sm tracking-wide mb-4 border border-amber-100" data-i18n-html="scene5Badge">
+<span class="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>SCENE 5
+                        </div>
+<h3 class="text-3xl font-extrabold text-slate-900 mb-6 group-hover:text-amber-600 transition-colors" data-i18n="scene5Title">Illuminated Hazard Avoidance</h3>
+<div class="mb-6 space-y-6 flex flex-col gap-4 text-balance">
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="uxValue">UX Value</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-amber-200 pl-4" data-i18n-html="scene5Ux">
+                                Highly intuitive visual navigation in the dark. Instead of alarming beeps, the robot silently 
+                                <span class="hl-scene5a highlight-text">redirects its path-lighting to steer the user's steps away from obstacles</span>, or 
+                                <span class="hl-scene5b highlight-text">projects warning lights on the ground to signal approaching danger</span>.
+                            </p>
+</div>
+<div class="space-y-2">
+<p class="text-xs font-bold tracking-widest text-slate-400" data-i18n="grantedClaimBasis">Granted Claim Basis</p>
+<p class="text-base text-slate-600 leading-relaxed border-l-4 border-amber-200 pl-4" data-i18n-html="scene5Claim">
+                                The robot illuminates a nearby ground area. When sensors identify a dangerous object ahead, it dynamically 
+                                <span class="hl-scene5a highlight-text">controls the illumination device to irradiate a new ground area in a different direction, inducing a change in movement</span>. For approaching moving objects, it 
+                                <span class="hl-scene5b highlight-text">projects light specifically onto a notification area on the road surface between the user and the threat</span>.
+                            </p>
+</div>
+</div>
+<div class="bg-amber-100 p-4 rounded-xl border border-amber-200">
+<p class="text-xs font-bold text-amber-500 tracking-widest uppercase mb-2" data-i18n="grantedPatents">Granted Patents</p>
+<div class="text-sm text-amber-900 font-mono flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center whitespace-nowrap"><img alt="US" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/us.png"/> 11906966, 11886190</span>
+<span class="text-amber-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="CN" class="w-4 h-3 rounded-sm shadow-sm mr-1.5" src="https://flagcdn.com/w40/cn.png"/> 115427910, 115877778</span>
+<span class="text-amber-300">|</span>
+<span class="inline-flex items-center whitespace-nowrap"><img alt="JP" class="w-4 h-3 rounded-sm shadow-sm mr-1.5 border border-amber-200/50" src="https://flagcdn.com/w40/jp.png"/> 7117650, 7117563</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full flex flex-col gap-6">
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene5a', 'bg-amber-200', 'text-amber-900')" onmouseleave="removeHighlight('hl-scene5a', 'bg-amber-200', 'text-amber-900')">
+<img alt="Scene 5 Guiding Light" class="w-full h-auto rounded-xl" src="scene5a.png"/>
+</div>
+<div class="rounded-2xl border-4 border-white shadow-xl bg-white p-2 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onmouseenter="highlightTarget('hl-scene5b', 'bg-amber-200', 'text-amber-900')" onmouseleave="removeHighlight('hl-scene5b', 'bg-amber-200', 'text-amber-900')">
+<img alt="Scene 5 Warning Light" class="w-full h-auto rounded-xl" src="scene5b.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-slate-900 text-white py-24 border-t-4 border-blue-500" id="contact">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-4xl font-extrabold mb-6 text-white" data-i18n="footerTitle">Own the Platform. Define the Market.</h2>
+<p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light" data-i18n="footerBody">For detailed documentation, or to initiate acquisition discussions, please visit PatentAuction.com.</p>
+<div class="inline-block bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-2xl transition hover:-translate-y-1 hover:shadow-blue-900/50">
+<p class="text-sm text-slate-400 font-bold uppercase tracking-widest mb-2" data-i18n="documentationInquiry">DOCUMENTATION &amp; INQUIRY</p>
+<a class="inline-flex flex-wrap items-center justify-center gap-3 text-2xl md:text-3xl font-bold text-white hover:text-blue-400 transition-colors break-words" href="https://patentauction.com/patent.php?nb=21000" target="_blank"><span data-i18n="visitPatentAuction">Visit PatentAuction.com</span><svg class="w-6 h-6 flex-none" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
+</div>
+<div class="mt-16 pt-8 border-t border-slate-800 text-sm text-slate-500 flex flex-col md:flex-row justify-center items-center gap-4">
+<p data-i18n-html="copyright">© 2026 Panasonic Holdings Corporation. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        const translations = {
+            "en": {
+                        "pageTitle": "Personal Service Robots via RaaS | Patents for Sale",
+                        "heroBadge": "Patents for Sale",
+                        "heroTitle1": "Patents for turning",
+                        "heroTitle2": "companion robots",
+                        "heroTitle3": "into physical service agents",
+                        "heroSubcopy": "This portfolio focuses on user-facing companion robots that translate third-party service requests and robot-side sensing into physical actions around an individual user.",
+                        "grantedUS": "Granted in US <img src=\"https://flagcdn.com/w40/us.png\" alt=\"US\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "grantedChina": "China <img src=\"https://flagcdn.com/w40/cn.png\" alt=\"CN\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "grantedJapan": "and Japan <img src=\"https://flagcdn.com/w40/jp.png\" alt=\"JP\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "secured2041": "Secured through 2041",
+                        "strategicTitle": "Strategic Value by Industry",
+                        "card1Title": "Robot Developers & Manufacturers",
+                        "card1Body": "Turn deployed companion robots into monetizable service endpoints. Use patented RaaS control flows to connect robots with health, safety, insurance, and care-service partners — expanding revenue beyond hardware sales or pre-installed robot skills.",
+                        "card2Title": "Health, Insurance & Safety Providers",
+                        "card2Body": "Extend digital services into the user's physical world. Add premium service tiers where companion robots can prompt exercise, accompany users outdoors, guide safer movement, and provide safety-related physical support around the individual user.",
+                        "card3Title": "Cloud & Robot API Platforms",
+                        "card3Body": "Build a strategic intermediation layer between service providers and physical robots. Covers key RaaS transactions that translate service requests into autonomous physical robot actions — enabling platform operators to orchestrate multiple services on top of companion robots.",
+                        "experienceTitle": "The Protected Companion-Robot RaaS Experience",
+                        "experienceLead": "Five scenes covering service-triggered exercise support, user-state-aware timing, outdoor mode switching, and robot-side guidance, shielding, and illumination behaviors.",
+                        "scene1Badge": "<span class=\"w-2 h-2 rounded-full bg-blue-500 mr-2\"></span>SCENE 1",
+                        "scene2Badge": "<span class=\"w-2 h-2 rounded-full bg-indigo-500 mr-2\"></span>SCENE 2",
+                        "scene3Badge": "<span class=\"w-2 h-2 rounded-full bg-emerald-500 mr-2\"></span>SCENE 3",
+                        "scene4Badge": "<span class=\"w-2 h-2 rounded-full bg-rose-500 mr-2\"></span>SCENE 4",
+                        "scene5Badge": "<span class=\"w-2 h-2 rounded-full bg-amber-500 mr-2\"></span>SCENE 5",
+                        "scene1Title": "Context-Aware Trigger & Timing",
+                        "scene2Title": "Physical Engagement",
+                        "scene3Title": "Automatic outdoor-mode transition when configured conditions are met",
+                        "scene4Title": "Proactive Guiding & Shielding",
+                        "scene5Title": "Illuminated Hazard Avoidance",
+                        "uxValue": "UX Value",
+                        "grantedClaimBasis": "Granted Claim Basis",
+                        "grantedPatents": "Granted Patents",
+                        "scene1Ux": "Avoids intrusive digital notifications. The robot \"reads the room,\" holding back exercise requests when the user is busy, and <span class=\"hl-scene1 highlight-text\">initiates engagement only when it detects the user is in an appropriate, relaxed state to be receptive</span>.",
+                        "scene1Claim": "A dual-server architecture. The Service Provider's server evaluates biometric data to issue an exercise request. The Robotics Operator's server temporarily holds this request, acquiring dynamic state data from the robot's sensors, and <span class=\"hl-scene1 highlight-text\">only transmits the execution instruction to the robot after determining the user's state is suitable</span>.",
+                        "scene2Ux": "Transforms easily ignored digital nudges into compelling physical interactions. A robot <span class=\"hl-scene2 highlight-text\">approaching and personally inviting the user to exercise creates a more salient physical prompt than a digital message alone</span>.",
+                        "scene2Claim": "Triggered automatically when a prior digital message fails to achieve the target exercise amount. The robot utilizes optical sensors to detect the user's 3D position, navigates to them, <span class=\"hl-scene2 highlight-text\">executes physical gestures via actuators, and monitors user behavior</span> via audio/visual sensors to accompany the workout.",
+                        "scene3Ux": "As the user walks out the door, the robot <span class=\"hl-scene3 highlight-text\">instantly adapts to the outdoors</span>—increasing speed and altering its behavior without requiring any manual mode switching by the user.",
+                        "scene3Claim": "Protected via a comprehensive dual-architecture. The environment transition can be triggered via server commands, or autonomously by the robot itself. Upon crossing the threshold, the robot <span class=\"hl-scene3 highlight-text\">independently shifts from an indoor to an outdoor specification</span>, e.g., dynamically increasing permitted mobility speeds.",
+                        "scene4Ux": "Acting like a physical bodyguard or guide dog, <span class=\"hl-scene4a highlight-text\">the robot proactively steps in front to guide the user away from unseen hazards</span>, or <span class=\"hl-scene4b highlight-text\">physically interposes itself as a shield against moving threats</span>.",
+                        "scene4Claim": "Continuously monitors from a default standard relative position. Upon detecting a dangerous object in the movement direction or a moving body entering an alert area, it executes dynamic path recalculation. <span class=\"hl-scene4a highlight-text\">It then autonomously drives to a calculated \"lead position\" to guide routing</span>, or <span class=\"hl-scene4b highlight-text\">a \"guard position\" directly between the user and the moving hazard</span>.",
+                        "scene5Ux": "Highly intuitive visual navigation in the dark. Instead of alarming beeps, the robot silently <span class=\"hl-scene5a highlight-text\">redirects its path-lighting to steer the user's steps away from obstacles</span>, or <span class=\"hl-scene5b highlight-text\">projects warning lights on the ground to signal approaching danger</span>.",
+                        "scene5Claim": "The robot illuminates a nearby ground area. When sensors identify a dangerous object ahead, it dynamically <span class=\"hl-scene5a highlight-text\">controls the illumination device to irradiate a new ground area in a different direction, inducing a change in movement</span>. For approaching moving objects, it <span class=\"hl-scene5b highlight-text\">projects light specifically onto a notification area on the road surface between the user and the threat</span>.",
+                        "footerTitle": "Own the Platform. Define the Market.",
+                        "footerBody": "For detailed documentation, or to initiate acquisition discussions, please visit PatentAuction.com.",
+                        "documentationInquiry": "DOCUMENTATION & INQUIRY",
+                        "visitPatentAuction": "Visit PatentAuction.com",
+                        "copyright": "&copy; 2026 Panasonic Holdings Corporation. All rights reserved."
+            },
+            "ja": {
+                        "pageTitle": "RaaSによるパーソナルサービスロボット | 特許売却",
+                        "heroBadge": "売却対象特許",
+                        "heroTitle1": "コンパニオンロボットを",
+                        "heroTitle2": "物理サービスエージェントへ",
+                        "heroTitle3": "変える特許ポートフォリオ",
+                        "heroSubcopy": "このポートフォリオは、第三者サービスのリクエストとロボット側センシングを、個々のユーザーの周囲で実行される物理的アクションへ変換する、ユーザー向けコンパニオンロボットに焦点を当てています。",
+                        "grantedUS": "米国で登録済み <img src=\"https://flagcdn.com/w40/us.png\" alt=\"US\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "grantedChina": "中国 <img src=\"https://flagcdn.com/w40/cn.png\" alt=\"CN\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "grantedJapan": "日本 <img src=\"https://flagcdn.com/w40/jp.png\" alt=\"JP\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "secured2041": "2041年までの保護期間",
+                        "strategicTitle": "産業別の戦略的価値",
+                        "card1Title": "ロボット開発・製造企業",
+                        "card1Body": "導入済みのコンパニオンロボットを、収益化可能なサービスエンドポイントへ変えます。特許化されたRaaS制御フローにより、ロボットをヘルスケア、安全、保険、ケアサービスのパートナーと接続し、ハードウェア販売やプリインストール済みスキルを超えた収益機会を広げます。",
+                        "card2Title": "ヘルスケア・保険・安全サービス事業者",
+                        "card2Body": "デジタルサービスをユーザーの物理空間へ拡張します。コンパニオンロボットが運動を促し、屋外で付き添い、より安全な移動を誘導し、個々のユーザーの周囲で安全関連の物理的サポートを提供するプレミアムサービス階層を追加できます。",
+                        "card3Title": "クラウド・ロボットAPIプラットフォーム",
+                        "card3Body": "サービス事業者と物理ロボットの間に戦略的な媒介レイヤーを構築できます。サービスリクエストを自律的なロボットの物理アクションへ変換する主要なRaaSトランザクションをカバーし、プラットフォーム事業者がコンパニオンロボット上で複数サービスをオーケストレーションできるようにします。",
+                        "experienceTitle": "保護対象となるコンパニオンロボットRaaS体験",
+                        "experienceLead": "サービス起点の運動支援、ユーザー状態に応じたタイミング制御、屋外モード切替、ロボット側の誘導・遮蔽・照明動作をカバーする5つのシーン。",
+                        "scene1Badge": "<span class=\"w-2 h-2 rounded-full bg-blue-500 mr-2\"></span>シーン 1",
+                        "scene2Badge": "<span class=\"w-2 h-2 rounded-full bg-indigo-500 mr-2\"></span>シーン 2",
+                        "scene3Badge": "<span class=\"w-2 h-2 rounded-full bg-emerald-500 mr-2\"></span>シーン 3",
+                        "scene4Badge": "<span class=\"w-2 h-2 rounded-full bg-rose-500 mr-2\"></span>シーン 4",
+                        "scene5Badge": "<span class=\"w-2 h-2 rounded-full bg-amber-500 mr-2\"></span>シーン 5",
+                        "scene1Title": "状況認識に基づくトリガーとタイミング制御",
+                        "scene2Title": "身体的な働きかけ",
+                        "scene3Title": "設定条件を満たしたときの自動的な屋外モード移行",
+                        "scene4Title": "先回り誘導とシールド動作",
+                        "scene5Title": "照明による危険回避",
+                        "uxValue": "UX価値",
+                        "grantedClaimBasis": "登録請求項上の根拠",
+                        "grantedPatents": "登録特許",
+                        "scene1Ux": "押しつけがましいデジタル通知を避けます。ロボットは「場の状況を読む」ように、ユーザーが忙しいときは運動リクエストを保留し、<span class=\"hl-scene1 highlight-text\">ユーザーが受け入れやすい適切でリラックスした状態だと検知した場合にのみ働きかけを開始します</span>。",
+                        "scene1Claim": "2サーバ構成です。サービスプロバイダー側のサーバが生体活動データを評価して運動リクエストを発行します。ロボティクスオペレーター側のサーバはこのリクエストを一時的に保留し、ロボットのセンサーから動的な状態データを取得し、<span class=\"hl-scene1 highlight-text\">ユーザー状態が適切であると判断した後にのみ、実行指示をロボットへ送信します</span>。",
+                        "scene2Ux": "見過ごされがちなデジタルの促しを、説得力のある物理的なやり取りへ変換します。ロボットが<span class=\"hl-scene2 highlight-text\">ユーザーに近づいて直接運動に誘うことで、デジタルメッセージ単体よりも目立つ物理的な促しを作ります</span>。",
+                        "scene2Claim": "事前のデジタルメッセージで目標運動量が達成されなかった場合に自動的に起動します。ロボットは光学センサーでユーザーの3D位置を検出し、ユーザーの近くへ移動し、<span class=\"hl-scene2 highlight-text\">アクチュエータによる身体的ジェスチャを実行し、ユーザー行動をモニタリングします</span>。また、音声／視覚センサーを用いて運動に伴走します。",
+                        "scene3Ux": "ユーザーが外へ出ると、ロボットは<span class=\"hl-scene3 highlight-text\">屋外に合わせて即座に適応し</span>、ユーザーが手動でモード切替を行うことなく、速度や動作を変更します。",
+                        "scene3Claim": "包括的な二者連携アーキテクチャによって保護されています。環境移行はサーバコマンドで起動することも、ロボット自身により自律的に起動することもできます。境界を越えると、ロボットは<span class=\"hl-scene3 highlight-text\">屋内仕様から屋外仕様へ独立して移行し</span>、例えば許容移動速度を動的に高めます。",
+                        "scene4Ux": "物理的なボディガードや盲導犬のように、<span class=\"hl-scene4a highlight-text\">ロボットがユーザーの前方へ先回りして見えにくい危険から遠ざけるよう誘導し</span>、または<span class=\"hl-scene4b highlight-text\">移動する脅威との間に物理的に入り込んでシールドとして機能します</span>。",
+                        "scene4Claim": "標準の相対位置から継続的にモニタリングします。移動方向上の危険物、または警戒領域へ入る移動体を検出すると、動的な経路再計算を実行します。<span class=\"hl-scene4a highlight-text\">その後、算出された「先導位置」へ自律的に移動して経路を誘導し</span>、または<span class=\"hl-scene4b highlight-text\">ユーザーと移動する危険物の間の「ガード位置」へ移動します</span>。",
+                        "scene5Ux": "暗所でも直感的な視覚ナビゲーションを提供します。警告音ではなく、ロボットは静かに<span class=\"hl-scene5a highlight-text\">進路照明の向きを変えて、ユーザーの足取りを障害物から遠ざけ</span>、または<span class=\"hl-scene5b highlight-text\">地面に警告光を投影して接近する危険を知らせます</span>。",
+                        "scene5Claim": "ロボットは近傍の足元領域を照らします。センサーが前方の危険物を識別すると、照明装置を動的に制御し、<span class=\"hl-scene5a highlight-text\">別方向の新たな足元領域に光を照射して、移動方向の変更を誘導します</span>。接近する移動体については、<span class=\"hl-scene5b highlight-text\">ユーザーと脅威との間の路面上の通知領域に光を投影します</span>。",
+                        "footerTitle": "プラットフォームを掌握し、市場を定義する。",
+                        "footerBody": "詳細資料、または取得に関する協議を開始するには、PatentAuction.comをご覧ください。",
+                        "documentationInquiry": "資料・お問い合わせ",
+                        "visitPatentAuction": "PatentAuction.comを見る",
+                        "copyright": "&copy; 2026 Panasonic Holdings Corporation. All rights reserved."
+            },
+            "zh": {
+                        "pageTitle": "基于 RaaS 的个人服务机器人 | 待售专利",
+                        "heroBadge": "待售专利",
+                        "heroTitle1": "将陪伴机器人",
+                        "heroTitle2": "转化为物理服务代理",
+                        "heroTitle3": "的专利组合",
+                        "heroSubcopy": "本专利组合聚焦面向用户的陪伴机器人，将第三方服务请求和机器人侧感知转化为围绕单个用户执行的物理动作。",
+                        "grantedUS": "已在美国授权 <img src=\"https://flagcdn.com/w40/us.png\" alt=\"US\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "grantedChina": "中国 <img src=\"https://flagcdn.com/w40/cn.png\" alt=\"CN\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "grantedJapan": "日本 <img src=\"https://flagcdn.com/w40/jp.png\" alt=\"JP\" class=\"w-5 h-auto rounded-sm shadow-sm\">",
+                        "secured2041": "保护期至 2041 年",
+                        "strategicTitle": "按行业划分的战略价值",
+                        "card1Title": "机器人开发商与制造商",
+                        "card1Body": "将已部署的陪伴机器人转化为可变现的服务端点。利用已授权的 RaaS 控制流程，将机器人与健康、安全、保险和护理服务伙伴连接起来，把收入机会从硬件销售或预装机器人技能扩展到更广阔的服务场景。",
+                        "card2Title": "健康、保险与安全服务提供商",
+                        "card2Body": "将数字服务延伸到用户的物理世界。可增加高级服务层级，使陪伴机器人能够提醒用户运动、陪同用户外出、引导更安全的移动，并围绕单个用户提供安全相关的物理支持。",
+                        "card3Title": "云平台与机器人 API 平台",
+                        "card3Body": "在服务提供商与物理机器人之间构建战略性中介层。覆盖将服务请求转化为自主物理机器人动作的关键 RaaS 交易，使平台运营商能够在陪伴机器人之上编排多种服务。",
+                        "experienceTitle": "受保护的陪伴机器人 RaaS 体验",
+                        "experienceLead": "五个场景涵盖由服务触发的运动支持、基于用户状态的时机控制、户外模式切换，以及机器人侧的引导、防护和照明行为。",
+                        "scene1Badge": "<span class=\"w-2 h-2 rounded-full bg-blue-500 mr-2\"></span>场景 1",
+                        "scene2Badge": "<span class=\"w-2 h-2 rounded-full bg-indigo-500 mr-2\"></span>场景 2",
+                        "scene3Badge": "<span class=\"w-2 h-2 rounded-full bg-emerald-500 mr-2\"></span>场景 3",
+                        "scene4Badge": "<span class=\"w-2 h-2 rounded-full bg-rose-500 mr-2\"></span>场景 4",
+                        "scene5Badge": "<span class=\"w-2 h-2 rounded-full bg-amber-500 mr-2\"></span>场景 5",
+                        "scene1Title": "情境感知的触发与时机控制",
+                        "scene2Title": "物理化的用户互动",
+                        "scene3Title": "满足设定条件时自动切换到户外模式",
+                        "scene4Title": "主动引导与防护定位",
+                        "scene5Title": "基于照明的危险规避",
+                        "uxValue": "用户体验价值",
+                        "grantedClaimBasis": "授权权利要求依据",
+                        "grantedPatents": "授权专利",
+                        "scene1Ux": "避免打扰式的数字通知。机器人像“读懂现场”一样，在用户忙碌时暂缓运动请求，并且<span class=\"hl-scene1 highlight-text\">只有在检测到用户处于合适、放松且更容易接受的状态时才开始介入</span>。",
+                        "scene1Claim": "双服务器架构。服务提供商的服务器评估生物活动数据并发出运动请求。机器人运营商的服务器临时保留该请求，从机器人传感器获取动态状态数据，并且<span class=\"hl-scene1 highlight-text\">只有在判断用户状态合适之后，才向机器人发送执行指令</span>。",
+                        "scene2Ux": "将容易被忽略的数字提醒转化为更有存在感的物理互动。机器人<span class=\"hl-scene2 highlight-text\">靠近用户并亲自邀请其运动，相比单纯的数字消息形成更显著的物理提示</span>。",
+                        "scene2Claim": "当先前的数字消息未能使用户达到目标运动量时自动触发。机器人使用光学传感器检测用户的三维位置，移动到用户附近，<span class=\"hl-scene2 highlight-text\">通过执行器执行物理手势，并监测用户行为</span>，同时通过音频/视觉传感器陪同运动。",
+                        "scene3Ux": "当用户走出家门时，机器人<span class=\"hl-scene3 highlight-text\">立即适应户外环境</span>，无需用户手动切换模式即可提高速度并改变行为。",
+                        "scene3Claim": "通过综合性的双架构进行保护。环境切换可以由服务器命令触发，也可以由机器人自身自主触发。越过边界后，机器人<span class=\"hl-scene3 highlight-text\">从室内规格独立切换到户外规格</span>，例如动态提高允许的移动速度。",
+                        "scene4Ux": "像物理保镖或导盲犬一样，<span class=\"hl-scene4a highlight-text\">机器人主动移动到前方，引导用户避开未察觉的危险</span>，或<span class=\"hl-scene4b highlight-text\">在移动威胁与用户之间进行物理介入，作为防护屏障</span>。",
+                        "scene4Claim": "从默认标准相对位置持续监测。当检测到移动方向上的危险物，或检测到移动体进入警戒区域时，执行动态路径重新计算。<span class=\"hl-scene4a highlight-text\">随后自主移动到计算出的“引导位置”以引导路线</span>，或移动到<span class=\"hl-scene4b highlight-text\">位于用户与移动危险之间的“防护位置”</span>。",
+                        "scene5Ux": "在黑暗中提供高度直观的视觉导航。无需刺耳提示音，机器人可以静默地<span class=\"hl-scene5a highlight-text\">改变路径照明方向，引导用户脚步远离障碍物</span>，或<span class=\"hl-scene5b highlight-text\">在地面投射警示光，提示接近的危险</span>。",
+                        "scene5Claim": "机器人照亮附近地面区域。当传感器识别前方危险物时，动态控制照明装置，<span class=\"hl-scene5a highlight-text\">向不同方向的新地面区域照射光，以诱导移动方向改变</span>。对于接近的移动体，机器人<span class=\"hl-scene5b highlight-text\">将光专门投射到用户与威胁之间路面上的通知区域</span>。",
+                        "footerTitle": "掌握平台。定义市场。",
+                        "footerBody": "如需详细资料，或希望启动收购洽谈，请访问 PatentAuction.com。",
+                        "documentationInquiry": "资料与咨询",
+                        "visitPatentAuction": "访问 PatentAuction.com",
+                        "copyright": "&copy; 2026 Panasonic Holdings Corporation. All rights reserved."
+            }
+};
+
+        function setLanguage(lang) {
+            const activeLang = translations[lang] ? lang : 'en';
+            const dict = translations[activeLang];
+            document.documentElement.lang = activeLang === 'zh' ? 'zh-CN' : activeLang;
+            document.title = dict.pageTitle || translations.en.pageTitle;
+
+            document.querySelectorAll('[data-i18n]').forEach((el) => {
+                const key = el.dataset.i18n;
+                if (dict[key] !== undefined) el.textContent = dict[key];
+            });
+
+            document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+                const key = el.dataset.i18nHtml;
+                if (dict[key] !== undefined) el.innerHTML = dict[key];
+            });
+
+            document.querySelectorAll('.language-option').forEach((button) => {
+                const isActive = button.dataset.lang === activeLang;
+                button.classList.toggle('is-active', isActive);
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+
+            localStorage.setItem('raasLpLanguage', activeLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('raasLpLanguage');
+            const browserLang = (navigator.language || 'en').toLowerCase();
+            const initialLang = savedLang || (browserLang.startsWith('ja') ? 'ja' : browserLang.startsWith('zh') ? 'zh' : 'en');
+            setLanguage(initialLang);
+
+            document.querySelectorAll('.language-option').forEach((button) => {
+                button.addEventListener('click', () => setLanguage(button.dataset.lang));
+            });
+        });
+
+
+        function highlightTarget(className, bgClass, textClass) {
+            const elements = document.querySelectorAll('.' + className);
+            elements.forEach(el => {
+                el.classList.add(bgClass, textClass);
+            });
+        }
+        function removeHighlight(className, bgClass, textClass) {
+            const elements = document.querySelectorAll('.' + className);
+            elements.forEach(el => {
+                el.classList.remove(bgClass, textClass);
+            });
+        }
+    </script>
+</body>
+</html>
