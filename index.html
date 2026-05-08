@@ -189,7 +189,7 @@
 <span class="hero-title-line" data-i18n="heroTitle3">into physical service agents</span>
 </h1>
 <p class="hero-subcopy mb-10 font-light fade-up delay-200 text-blue-100 tracking-wide" data-i18n="heroSubcopy">
-                This portfolio focuses on user-facing companion robots that translate third-party service requests and robot-side sensing into physical actions around an individual user
+                This portfolio focuses on user-facing companion robots that translate third-party service requests and robot-side sensing into physical actions around an individual user.
             </p>
 <div class="mt-8 text-sm text-blue-200/60 font-medium tracking-wide fade-up delay-200 flex flex-col items-center gap-2">
 <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
@@ -638,13 +638,12 @@
                 button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
 
-            localStorage.setItem('raasLpLanguage', activeLang);
+            localStorage.setItem('raasLpLanguageV2', activeLang);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('raasLpLanguage');
-            const browserLang = (navigator.language || 'en').toLowerCase();
-            const initialLang = savedLang || (browserLang.startsWith('ja') ? 'ja' : browserLang.startsWith('zh') ? 'zh' : 'en');
+            const savedLang = localStorage.getItem('raasLpLanguageV2');
+            const initialLang = savedLang || 'en';
             setLanguage(initialLang);
 
             document.querySelectorAll('.language-option').forEach((button) => {
