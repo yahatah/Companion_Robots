@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://yahatah.github.io/Companion_Robots/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yahatah.github.io/Companion_Robots/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yahatah.github.io/Companion_Robots/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yahatah.github.io/Companion_Robots/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yahatah.github.io/Companion_Robots/" />
+  </url>
+  <url>
+    <loc>https://yahatah.github.io/Companion_Robots/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yahatah.github.io/Companion_Robots/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yahatah.github.io/Companion_Robots/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yahatah.github.io/Companion_Robots/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yahatah.github.io/Companion_Robots/" />
+  </url>
+  <url>
+    <loc>https://yahatah.github.io/Companion_Robots/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yahatah.github.io/Companion_Robots/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yahatah.github.io/Companion_Robots/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yahatah.github.io/Companion_Robots/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yahatah.github.io/Companion_Robots/" />
+  </url>
+  <url>
+    <loc>https://yahatah.github.io/Companion_Robots/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yahatah.github.io/Companion_Robots/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yahatah.github.io/Companion_Robots/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yahatah.github.io/Companion_Robots/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yahatah.github.io/Companion_Robots/" />
+  </url>
+</urlset>

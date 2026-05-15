@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yahatah.github.io/Companion_Robots/sitemap.xml

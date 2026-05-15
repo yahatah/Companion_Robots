@@ -4,7 +4,10 @@
 
 This repository hosts the public GitHub Pages landing page for a **companion robot patent portfolio available for acquisition discussion**. The portfolio includes **22 granted patents** across the **United States, China, and Japan** and is presented as being in force through **2041**. It focuses on RaaS architectures where third-party service requests, robotics-operator orchestration, and robot-side sensing are translated into physical robot actions around an individual user.
 
-- **Landing page:** [Companion Robots RaaS Patent Portfolio](https://yahatah.github.io/Companion_Robots/)
+- **Language selector / x-default:** [Companion Robots RaaS Patent Portfolio](https://yahatah.github.io/Companion_Robots/)
+- **English landing page:** [RaaS Patent Portfolio](https://yahatah.github.io/Companion_Robots/en/)
+- **Japanese landing page:** [RaaS 特許ポートフォリオ](https://yahatah.github.io/Companion_Robots/ja/)
+- **Chinese landing page:** [RaaS 专利组合](https://yahatah.github.io/Companion_Robots/zh/)
 - **Documentation & inquiry:** [PatentAuction.com listing](https://patentauction.com/patent.php?nb=21000)
 - **Call to action:** Review the Portfolio Details. Take the Next Step.
 
@@ -120,3 +123,17 @@ This repository contains the static HTML and image assets for a public GitHub Pa
 ## Notice
 
 This repository and landing page are for informational and acquisition-discussion purposes only. Patent scope, legal status, validity, enforceability, ownership, maintenance status, remaining term, and transfer terms should be confirmed using official patent registers and qualified legal counsel.
+
+
+## Multilingual URL structure
+
+This repository uses separate URLs for each language to improve international SEO and to help search engines select the correct language version:
+
+| Language | URL | Purpose |
+|---|---|---|
+| x-default | https://yahatah.github.io/Companion_Robots/ | Lightweight language selector / browser-language redirect |
+| English | https://yahatah.github.io/Companion_Robots/en/ | English canonical landing page |
+| Japanese | https://yahatah.github.io/Companion_Robots/ja/ | Japanese canonical landing page for searches such as “RaaS 特許” |
+| Simplified Chinese | https://yahatah.github.io/Companion_Robots/zh/ | Chinese canonical landing page |
+
+Each language page includes canonical and `hreflang` links for `en`, `ja`, `zh-CN`, and `x-default`. The sitemap also contains the same alternate-language cluster.
