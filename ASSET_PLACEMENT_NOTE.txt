@@ -1,1 +1,0 @@
-Keep existing image assets such as scene1.png, scene2.png, scene3.png, scene4a.png, scene4b.png, scene5a.png, scene5b.png, og-image.png, and favicon.png at the repository root. The language pages use ../ relative paths to those root assets.
